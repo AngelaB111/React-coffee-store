@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Home from './components/Home';
+import Menu from './components/Menu';
+import About from './components/About';
+import {  Routes, Route} from 'react-router-dom' ; 
 
 function App() {
+  
+//   const [isLoggedin, setisLoggedIn] = useState(true);
+  
+//   useEffect ( () => 
+//     { alert("isLoggedin state changed")}, [isLoggedin]) ; 
+// if(isLoggedin) { 
+//     return ( 
+//       <> 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      
+        <Routes>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/' element={<Home/>}/>
+        <Route path="/menu" element={<Menu />} />
+        </Routes>
+        
+    </>
   );
 }
+
+/*<button onClick={() => setisLoggedIn(false)}> Log out </button>
+</>
+);} 
+  else 
+   {
+     return( 
+      <> 
+    <Login/> 
+    
+<button onClick={() => setisLoggedIn(true)}> Log in </button>
+    </>
+   );} */
 
 export default App;
