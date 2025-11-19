@@ -6,12 +6,43 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function Footer() {
   return (
-    <div className="footer text-[#774b31] ">
-      <div className="socialMedia p-2 h-6  mb-3">
-        <InstagramIcon /> <TwitterIcon /> <FacebookIcon /> <LinkedInIcon />
+    <footer className="bg-[#774b31] text-white py-8">
+      <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-20">
+        <div className="mb-4 md:mb-0 text-lg font-semibold">Coffee O'clock</div>
+
+        <div className="flex gap-4 mb-4 md:mb-0">
+          <a
+            href="#f"
+            className="hover:text-[#f3c585] transition-colors duration-300"
+          >
+            <InstagramIcon />
+          </a>
+          <a
+            href="#f"
+            className="hover:text-[#f3c585] transition-colors duration-300"
+          >
+            <TwitterIcon />
+          </a>
+          <a
+            href="#f"
+            className="hover:text-[#f3c585] transition-colors duration-300"
+          >
+            <FacebookIcon />
+          </a>
+          <a
+            href="#f"
+            className="hover:text-[#f3c585] transition-colors duration-300"
+          >
+            <LinkedInIcon />
+          </a>
+        </div>
+
+        {/* Copyright */}
+        <div className="text-sm text-gray-200">
+          &copy; 2025 Lebanese International University. All rights reserved.
+        </div>
       </div>
-      <p className="mt-8"> &copy; 2025 Lebanese International University </p>
-    </div>
+    </footer>
   );
 }
 
