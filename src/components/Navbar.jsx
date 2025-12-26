@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import logo from "../assets/coffee-cup.png";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-
 function Navbar({ onNavLogout, ontoggle }) {
   return (
     <nav className=" flex items-center justify-between h-16 px-6 text-xl">
@@ -24,8 +23,9 @@ function Navbar({ onNavLogout, ontoggle }) {
         <Link className="px-4" to="/contact">
           Contact
         </Link>
-       <ShoppingCartIcon fontSize="large" />
-
+        <Link to="/cart">
+          <ShoppingCartIcon fontSize="large" />
+        </Link>
       </div>
     </nav>
   );

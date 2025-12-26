@@ -13,15 +13,15 @@ function ProductCard({ product }) {
       />
       <h3 className="text-xl font-semibold mb-2">{product.name}</h3>
       <p className="text-gray-700 mb-2">{product.description}</p>
-      <p className="text-[#774b31] font-semibold mb-4">
-        ${product.price.toFixed(2)}
-      </p>
+      {/* <p className="text-[#774b31] font-semibold mb-4">
+        ${product.price.toFixed(2)} */}
+      {/* </p> */}
       <div className="flex justify-center gap-2">
         <button className="bg-[#774b31] text-white px-2 py-2  rounded hover:bg-[#633628] transition">
           Add to Cart
         </button>
         <Link
-          to={`/product/${product.id}`}
+          to={`/product/${product.item_id}`}
           className="bg-gray-200 text-[#774b31] px-2 py-2 rounded hover:bg-gray-300 transition"
         >
           View Details
