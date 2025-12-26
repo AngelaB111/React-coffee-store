@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import CategoryFilter from "./CategoryFilter";
 import axios from "axios";
-
-import { PRODUCTS } from "../data/products";
 function ProductGrid() {
   const [categories, setCategories] = useState(["All"]);
   const [selectedCategory, setSelectedCategory] = useState("All");
