@@ -95,7 +95,7 @@ function ProductDetails() {
           </div>
         </div>
 
-        <RelatedProducts currentId={product.id} />
+        <RelatedProducts currentId={product.item_id} />
       </div>
       <Footer />
     </div>
