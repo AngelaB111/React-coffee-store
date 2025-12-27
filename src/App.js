@@ -5,10 +5,12 @@ import About from './components/About';
 import {  Routes, Route} from 'react-router-dom' ; 
 import ProductDetails from './components/ProductDetails';
 import Contact from './components/Contact' ; 
-import Cart from './components/Cart' ; 
+import Cart from './components/CartContext' ; 
 
 function App() {
+  
   return (
+
     <>      
         <Routes>
           <Route path='/about' element={<About/>}/>
