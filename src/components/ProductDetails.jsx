@@ -4,7 +4,10 @@ import RelatedProducts from "./RelatedProducts";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
+import { useCart } from "../context/CartContext";
+
 function ProductDetails() {
+  const { addToCart } = useCart();
   const { param } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -89,7 +92,10 @@ function ProductDetails() {
               </button>
             </div>
 
-            <button className="bg-[#774b31] text-white px-6 py-2 rounded hover:bg-[#633628] transition">
+            <button
+              onClick={() => addToCart(product)}
+              className="bg-[#774b31] text-white px-6 py-2 rounded hover:bg-[#633628] transition"
+            >
               Add to Cart
             </button>
           </div>
