@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 function ProductCard({ product }) {
+  const { addToCart } = useCart();
   return (
     <div className="bg-white rounded-xl shadow-lg p-4 text-center">
       <img
@@ -15,7 +16,7 @@ function ProductCard({ product }) {
       <p className="text-gray-700 mb-2"> {product.description}</p>
 
       <div className="flex justify-center gap-2">
-        <button className="bg-[#774b31] text-white px-2 py-2 rounded hover:bg-[#633628] transition">
+        <button  onClick={() => addToCart(product)} className="bg-[#774b31] text-white px-2 py-2 rounded hover:bg-[#633628] transition">
           Add to Cart
         </button>
 

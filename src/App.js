@@ -5,7 +5,8 @@ import About from './components/About';
 import {  Routes, Route} from 'react-router-dom' ; 
 import ProductDetails from './components/ProductDetails';
 import Contact from './components/Contact' ; 
-import Cart from './components/CartContext' ; 
+import Cart from "./components/Cart";  
+
 
 function App() {
   
