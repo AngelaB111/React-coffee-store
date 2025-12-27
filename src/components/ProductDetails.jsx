@@ -1,28 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { PRODUCTS } from "../data/products";
 import RelatedProducts from "./RelatedProducts";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 function ProductDetails() {
-  const { param } = useParams(); 
-  let product; 
+  const { param } = useParams();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [size, setSize] = useState("Small");
   const [quantity, setQuantity] = useState(1);
-  if (!isNaN(param)) {
-    const productId = parseInt(param, 10);
-    product = PRODUCTS.find((p) => p.id === productId);
-  } else {
-    product = PRODUCTS.find(
-      (p) => p.name.toLowerCase() === param.toLowerCase()
-    );
-  }
+  useEffect(() => {
+    fetch(`http://localhost:5000/items/detail/${encodeURIComponent(param)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setProduct(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching product:", err);
+        setLoading(false);
+      });
+  }, [param]);
 
+  if (loading) return <p className="text-center mt-20">Loading...</p>;
   if (!product) return <p className="text-center mt-20">Product not found.</p>;
-  let price = product.price;
+
+  let price = Number(product.price) || 0;
+
   if (size === "Medium") price += 0.5;
   if (size === "Large") price += 1;
+
   const incrementQty = () => setQuantity((q) => q + 1);
   const decrementQty = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
@@ -36,7 +44,6 @@ function ProductDetails() {
             alt={product.name}
             className="w-full md:w-1/2 h-96 object-cover rounded-lg"
           />
-
           <div className="flex-1">
             <h2 className="text-4xl font-semibold mb-4 text-[#774b31]">
               {product.name}

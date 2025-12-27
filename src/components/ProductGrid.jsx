@@ -10,29 +10,34 @@ function ProductGrid() {
     const fetchCategories = async () => {
       try {
         const res = await axios.get("http://localhost:5000/categories");
-        console.log(res.data);
         const apiCategories = res.data.map((item) => item.category);
-
         setCategories(["All", ...apiCategories]);
-      } catch (error) {
-        console.error("Failed to load categories", error);
+      } catch (err) {
+        console.error(err);
       }
     };
-
     fetchCategories();
   }, []);
+
   useEffect(() => {
     const url =
       selectedCategory === "All"
-        ? "http://localhost:5000/items"
-        : `http://localhost:5000/items/${selectedCategory}`;
+        ? "http://localhost:5000/items/details"
+        : `http://localhost:5000/items/details/${encodeURIComponent(
+            selectedCategory
+          )}`;
 
     axios
       .get(url)
-      .then((res) => setProducts(res.data))
+      .then((res) => {
+        const productsWithDefaults = res.data.map((p) => ({
+          ...p,
+          price: p.price ?? 0,
+        }));
+        setProducts(productsWithDefaults);
+      })
       .catch((err) => console.error(err));
   }, [selectedCategory]);
-
   return (
     <div className="px-10 md:px-36 py-16 bg-[#faf7f2] min-h-screen">
       <h2 className="text-4xl font-semibold text-center text-[#774b31] mb-8">
