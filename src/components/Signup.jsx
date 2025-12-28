@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
+import { Link } from "react-router-dom";
 function Signup() {
   const [form, setForm] = useState({
     name: "",
@@ -36,9 +37,7 @@ function Signup() {
         </h2>
 
         {error && (
-          <p className="text-red-500 text-sm text-center mb-4">
-            {error}
-          </p>
+          <p className="text-red-500 text-sm text-center mb-4">{error}</p>
         )}
 
         <input
@@ -73,6 +72,13 @@ function Signup() {
         >
           Sign Up
         </button>
+        <p className="text-gray-500 ">
+          Already Have An Account?{" "}
+          <Link to="/Login" className="text-red-600">
+            {" "}
+            Login{" "}
+          </Link>
+        </p>
       </form>
     </div>
   );
