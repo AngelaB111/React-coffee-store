@@ -20,9 +20,9 @@ Clean UI and easy structure
 |---|---|---|
 | ![Home](images/home1.png) | ![Details](images/hom2.png) | ![Menu](images/home3.png) |
 
-| Product Details | Menu |
-|---|---|
- | ![Details](images/details.png) | ![Menu](images/menu.png) |
+| Product Details | Menu | Contact  |
+|---|---|---|
+ | ![Details](images/details.png) | ![Menu](images/menu.png) | ![Contact](images/contact.png) |
  
 | Login | Cart | Signup |
 |---|---|---|
