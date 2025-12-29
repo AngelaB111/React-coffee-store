@@ -14,4 +14,12 @@ Smooth navigation
 
 Clean UI and easy structure
 
-![Home Screen](images/home1.png)
+## 📱 App Screenshots
+
+| Home Page | Product Details | Menu |
+|---|---|---|
+| ![Home](images/home1.png) | ![Details](images/details.png) | ![Menu](images/menu.png) |
+
+| Login | Cart | Signup |
+|---|---|---|
+| ![Login](images/login.png) | ![Cart](images/cart.png) | ![Signup](images/signup.png) |
