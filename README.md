@@ -16,9 +16,9 @@ Clean UI and easy structure
 
 ## 📱 App Screenshots
 
-| Home Page | Home Page | Home Page |
-|---|---|---|
-| ![Home](images/home1.png) | ![Details](images/hom2.png) | ![Menu](images/home3.png) |
+| Home Page | Home Page | Home Page |About Page | 
+|---|---|---|---|
+| ![Home](images/home1.png) | ![Details](images/hom2.png) | ![Menu](images/home3.png) | ![About](images/about.png) |
 
 | Product Details | Menu | Contact  |
 |---|---|---|
