@@ -74,7 +74,7 @@ function Signup() {
         </button>
         <p className="text-gray-500 ">
           Already Have An Account?{" "}
-          <Link to="/Login" className="text-red-600">
+          <Link to="/" className="text-red-600">
             {" "}
             Login{" "}
           </Link>

@@ -14,7 +14,7 @@ function Navbar({ onNavLogout, ontoggle }) {
       </div>
 
       <div className="flex items-center">
-        <Link className="px-4" to="/">
+        <Link className="px-4" to="/home">
           Home
         </Link>
         <Link className="px-4" to="/about">

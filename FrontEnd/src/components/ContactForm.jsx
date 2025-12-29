@@ -1,64 +1,79 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import axios from "axios";
 
 function ContactForm() {
-  const [formData, setFormData] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
 
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Message Sent!");
+    setError("");
+    setSuccess("");
+
+    try {
+      await axios.post("http://localhost:5000/contact", form);
+
+      setSuccess("Message sent ☕ We’ll get back to you soon.");
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setError(err.response?.data?.message || "Something went wrong");
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-8 shadow-lg rounded-xl">
-      <h3 className="text-2xl font-semibold mb-6">Send Us a Message</h3>
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow"
+    >
+      <h2 className="text-2xl font-semibold text-[#6f4e37] mb-4">Contact Us</h2>
 
-      <div className="mb-4">
-        <label className="block mb-1 font-medium">Name</label>
-        <input
-          type="text"
-          name="name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-          className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#774b31]"
-        />
-      </div>
+      {error && <p className="text-red-500 text-sm mb-3">{error}</p>}
 
-      <div className="mb-4">
-        <label className="block mb-1 font-medium">Email</label>
-        <input
-          type="email"
-          name="email"
-          required
-          value={formData.email}
-          onChange={handleChange}
-          className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#774b31]"
-        />
-      </div>
+      {success && <p className="text-green-600 text-sm mb-3">{success}</p>}
 
-      <div className="mb-6">
-        <label className="block mb-1 font-medium">Message</label>
-        <textarea
-          name="message"
-          required
-          rows="5"
-          value={formData.message}
-          onChange={handleChange}
-          className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#774b31]"
-        />
-      </div>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        value={form.name}
+        onChange={handleChange}
+        className="w-full p-3 mb-4 border rounded"
+        required
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your email"
+        value={form.email}
+        onChange={handleChange}
+        className="w-full p-3 mb-4 border rounded"
+        required
+      />
+
+      <textarea
+        name="message"
+        placeholder="Your message"
+        value={form.message}
+        onChange={handleChange}
+        className="w-full p-3 mb-4 border rounded"
+        rows="4"
+        required
+      />
 
       <button
         type="submit"
-        className="w-full bg-[#774b31] text-white py-3 rounded-md font-semibold hover:bg-[#633628] transition"
+        className="w-full bg-[#6f4e37] text-white py-3 rounded hover:bg-[#5b3f2c]"
       >
         Send Message
       </button>
