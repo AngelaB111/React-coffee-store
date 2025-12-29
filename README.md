@@ -13,3 +13,5 @@ Images for each coffee type
 Smooth navigation
 
 Clean UI and easy structure
+
+![Home Screen](images/home1.png)
