@@ -16,10 +16,14 @@ Clean UI and easy structure
 
 ## 📱 App Screenshots
 
-| Home Page | Product Details | Menu |
+| Home Page | Home Page | Home Page |
 |---|---|---|
-| ![Home](images/home1.png) | ![Details](images/details.png) | ![Menu](images/menu.png) |
+| ![Home](images/home1.png) | ![Details](images/hom2.png) | ![Menu](images/home3.png) |
 
+| Product Details | Menu |
+|---|---|
+ | ![Details](images/details.png) | ![Menu](images/menu.png) |
+ 
 | Login | Cart | Signup |
 |---|---|---|
 | ![Login](images/login.png) | ![Cart](images/cart.png) | ![Signup](images/signup.png) |
