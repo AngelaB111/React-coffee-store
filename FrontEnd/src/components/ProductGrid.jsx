@@ -10,7 +10,7 @@ function ProductGrid() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/categories");
+        const res = await axios.get("https://coffee-store-backend-wmt5.onrender.com/categories");
         const apiCategories = res.data.map((item) => item.category);
         setCategories(["All", ...apiCategories]);
       } catch (err) {
@@ -23,8 +23,8 @@ function ProductGrid() {
   useEffect(() => {
     const url =
       selectedCategory === "All"
-        ? "http://localhost:5000/items/details"
-        : `http://localhost:5000/items/details/${encodeURIComponent(
+        ? "https://coffee-store-backend-wmt5.onrender.com/items/details"
+        : `https://coffee-store-backend-wmt5.onrender.com/items/details/${encodeURIComponent(
             selectedCategory
           )}`;
 

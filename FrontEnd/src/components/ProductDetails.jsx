@@ -14,7 +14,7 @@ function ProductDetails() {
   const [size, setSize] = useState("Small");
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
-    fetch(`http://localhost:5000/items/detail/${encodeURIComponent(param)}`)
+    fetch(`https://coffee-store-backend-wmt5.onrender.com/items/detail/${encodeURIComponent(param)}`)
       .then((res) => res.json())
       .then((data) => {
         setProduct(data);

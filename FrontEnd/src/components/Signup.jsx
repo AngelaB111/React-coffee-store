@@ -19,7 +19,11 @@ function Signup() {
     setError("");
 
     try {
-      await axios.post("http://localhost:5000/auth/signup", form);
+      await axios.post(
+        "https://coffee-store-backend-wmt5.onrender.com/auth/signup",
+        // http://localhost:5000
+        form
+      );
       alert("Account created ☕ You can now log in");
     } catch (err) {
       setError(err.response?.data?.message || "Signup failed");

@@ -19,10 +19,14 @@ function Login() {
     setError("");
 
     try {
-      const res = await axios.post("http://localhost:5000/auth/login", form);
+      const res = await axios.post(
+        "https://coffee-store-backend-wmt5.onrender.com/auth/login",
+        // http://localhost:5000
+        form
+      );
 
       localStorage.setItem("user", JSON.stringify(res.data.user));
-      navigate("/home"); 
+      navigate("/home");
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");
     }

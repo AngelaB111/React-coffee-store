@@ -8,7 +8,7 @@ function RelatedProducts({ currentId }) {
   useEffect(() => {
     if (!currentId) return;
 
-    fetch(`http://localhost:5000/items/related/${currentId}?limit=3`)
+    fetch(`https://coffee-store-backend-wmt5.onrender.com/items/related/${currentId}?limit=3`)
       .then((res) => {
         if (!res.ok) throw new Error("Server error");
         return res.json();

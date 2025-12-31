@@ -21,7 +21,7 @@ function ContactForm() {
     setSuccess("");
 
     try {
-      await axios.post("http://localhost:5000/contact", form);
+      await axios.post("https://coffee-store-backend-wmt5.onrender.com/contact", form);
 
       setSuccess("Message sent ☕ We’ll get back to you soon.");
       setForm({ name: "", email: "", message: "" });

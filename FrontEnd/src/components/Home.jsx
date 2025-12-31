@@ -14,7 +14,8 @@ function Home() {
     const fetchRelated = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/items/related/1?limit=3"
+          "https://coffee-store-backend-wmt5.onrender.com/items/related/1?limit=3"
+  
         );
         if (!res.ok) throw new Error("Server error");
         const data = await res.json();
