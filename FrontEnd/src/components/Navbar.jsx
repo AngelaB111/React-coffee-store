@@ -26,6 +26,9 @@ function Navbar({ onNavLogout, ontoggle }) {
         <Link className="px-4" to="/contact">
           Contact
         </Link>
+          <Link className="px-4" to="/profile">
+          Profile
+        </Link>
         <Link to="/cart">
           <ShoppingCartIcon fontSize="large" /> ({cart.length})
         </Link>

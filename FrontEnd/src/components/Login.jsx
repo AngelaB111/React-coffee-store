@@ -34,6 +34,7 @@ function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f7f3ef]">
+    
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-md bg-white p-8 rounded-2xl shadow-md"
@@ -79,6 +80,7 @@ function Login() {
         </p>
       </form>
     </div>
+  
   );
 }
 

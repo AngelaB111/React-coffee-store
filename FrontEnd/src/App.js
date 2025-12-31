@@ -2,7 +2,7 @@ import './App.css';
 import Home from './components/Home';
 import Menu from './components/Menu';
 import About from './components/About';
-
+import Profile from './components/Profile';
 import Signup from './components/Signup';
 import Login from './components/Login';
 import {  Routes, Route} from 'react-router-dom' ; 
@@ -25,7 +25,7 @@ function App() {
         
         <Route path="/contact" element={<Contact/>} />
         <Route path="/product/:param" element={<ProductDetails />} />
-
+<Route path="/profile" element={<Profile />} />
         <Route path="/cart" element={<Cart/>} />
         </Routes>
     </>
