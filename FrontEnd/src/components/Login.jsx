@@ -21,10 +21,10 @@ function Login() {
     try {
       const res = await axios.post(
         "https://coffee-store-backend-wmt5.onrender.com/auth/login",
-        // http://localhost:5000
         form
       );
-
+      
+      // http://localhost:5000
       localStorage.setItem("user", JSON.stringify(res.data.user));
       navigate("/home");
     } catch (err) {
