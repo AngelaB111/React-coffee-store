@@ -17,6 +17,6 @@ Full Auth UI: Beautifully designed, functional forms for User Login and Account 
 |---|---|---|
  | ![Details](images/details.png) | ![Menu](images/menu.png) | ![Contact](images/contact.png) |
  
-| Login | Cart | Signup |
-|---|---|---|
-| ![Login](images/login.png) | ![Cart](images/cart.png) | ![Signup](images/signup.png) |
+| Login | Cart | Signup | Profile |
+|---|---|---|---|
+| ![Login](images/login.png) | ![Cart](images/cart.png) | ![Signup](images/signup.png) |![Profile](images/profile.png) |
